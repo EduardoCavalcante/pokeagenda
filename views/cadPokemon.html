@@ -1,0 +1,59 @@
+<body ng-controller="pokemonController" >
+
+    <!-- Modal -->
+    <div class="modal fade" id="sucess-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #5ace5a;color: #292929;">
+                <h4 class="modal-title" id="modalLabel">Sucesso</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              Registro Gravado Com Sucesso.
+            </div>                
+          </div>
+        </div>
+    </div> <!-- /.modal -->
+
+        
+    <div class="container col-md-6" ng-init="init()">
+        <div>
+            <strong style="border-bottom: 1px solid;float: left;width: 100%;margin-bottom: 5px">Cadastro de Pokémon</strong>
+        </div>
+        
+        <form name="cadPokemon">
+          <div class="">
+            <label for="name">Nome</label>
+            <input type="text" ng-model="pokemon.Name" ng-maxlength="60" maxlength="60" name="Name" class="form-control" id="name" required />
+            <div class="alert alert-danger" ng-if="error['Name']" style="margin-top: 5px" role="alert">Campo nome é obrigatório.</div>
+
+          </div>
+
+          <div class="">
+              <label for="type">Tipo</label>
+              <select 
+                class="form-control"
+                ng-model="pokemon.Type"
+                Name="Type"
+                ng-options="type.ID as type.Descricao for type in types" required >
+              </select>
+              <div class="alert alert-danger" ng-if="error['Type']" style="margin-top: 5px" role="alert">Campo tipo é obrigatório.</div>
+          </div>
+     
+          <div class="">
+            <label for="type" class="label" style="display: block;">Sexo</label>
+            <label class="radio-inline">
+                <input type="radio" ng-model="pokemon.Gender" value="M" name="Gender">Masculino
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="F" ng-model="pokemon.Gender" name="Gender">Femenino
+              </label>
+              <div class="alert alert-danger" ng-if="error['Gender']" style="margin-top: 5px" role="alert">Campo sexo é obrigatório.</div>
+          </div>
+     
+          <button type="submit" ng-click="salvar(pokemon)" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+    <pre></pre>
+</body>
+  

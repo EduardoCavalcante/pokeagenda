@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poké-Agenda</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-grid.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-grid.css.map"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-reboot.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-reboot.css.map"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css.map"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 15px">
+        <a class="navbar-brand" href="#!/">Inicio</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="/lib/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="/lib/angular-route/angular-route.js"></script>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/ngstorage/ngStorage.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/app.js"></script>
+<script src="/constant.js"></script>
+<script src="/controllers/pokemonController.js"></script>
+</html>

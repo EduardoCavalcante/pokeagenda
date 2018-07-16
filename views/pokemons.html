@@ -1,0 +1,46 @@
+<body ng-controller="pokemonController">
+
+    <div class="container" ng-init="init()">
+
+        <div id="top" class="col-md-12">
+                
+            <div class="col-md-9 pull-left" style="display: inline-block;padding-left: 0px">
+                <form class="form-inline" ng-submit="pesquisar(search)">
+                    <input class="form-control mr-sm-2" maxlength="60" type="search" ng-model="search" placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+                 
+            <div class="col-md-3 text-right" style="float:right;padding-right: 0px;">
+                <a href="#!/pokemon/add" class="btn btn-primary pull-right h2">Novo Pokemon</a>
+            </div>
+        </div>
+
+        <div class="table-responsive col-md-12" style="margin-top: 15px">
+            <table class="table table-striped" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sexo</th>
+                        <th>Tipo</th>
+                        <th class="text-right">Excluir</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="pokemon in pokemons">
+                        <td class="btn-link pointer" ng-click="editPokemon(pokemon.ID)">{{pokemon.Name}}</td>
+                        <td>{{pokemon.Gender}}</td>
+                        <td>{{pokemon.DescType}}</td>
+                        <td class="btn-link pointer text-right" style="color: red;padding-right: 30px" ng-click="deletePokemon(pokemon.ID)">X</td>
+                    </tr>
+    
+                    <tr ng-if="pokemons.length == 0">
+                        <td colspan="4">Não há registros.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+      
